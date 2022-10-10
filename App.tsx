@@ -1,11 +1,13 @@
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import {ThemeProvider} from 'styled-components';
+import Navigation from './src/Navigation';
+import {light, dark} from './src/theme';
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <Text>초기셋팅</Text>
-    </SafeAreaView>
+    <ThemeProvider theme={light}>
+      <Navigation />
+    </ThemeProvider>
   );
 };
 
