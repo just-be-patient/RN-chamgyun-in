@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import Login from './View/Login';
+import {LoginView, HomeView} from './View';
 
 const Stack = createStackNavigator();
 
@@ -13,7 +13,8 @@ const Navigation: React.FC = () => {
         screenOptions={{
           headerShown: false,
         }}>
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Login" component={LoginView} />
+        <Stack.Screen name="Home" component={HomeView} />
       </Stack.Navigator>
     </NavigationContainer>
   );
