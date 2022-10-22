@@ -10,7 +10,7 @@ const NavigationBarWrapper = styled(View)`
   width: 100%;
   height: 60px;
 
-  border-bottom-width: 0.2;
+  border-bottom-width: 0.2px;
   border-style: solid;
 `;
 
