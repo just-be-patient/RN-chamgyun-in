@@ -2,12 +2,12 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import styled from 'styled-components';
 
-import NavigationBarView from '../shared/NavigationBarView';
+import HomeNavigationBarView from './HomeNavigationBarView';
 
 const HomeView: React.FC = () => {
   return (
     <HomeWrapper>
-      <NavigationBarView />
+      <HomeNavigationBarView />
       <Text>홈</Text>
     </HomeWrapper>
   );
