@@ -10,7 +10,6 @@ const DefaultView: React.FC = ({navigation}: any) => {
   useEffect(() => {
     replace();
 
-    return replace;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
