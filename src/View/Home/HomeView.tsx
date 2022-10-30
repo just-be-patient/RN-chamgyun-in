@@ -4,10 +4,14 @@ import styled from 'styled-components';
 
 import HomeNavigationBarView from './HomeNavigationBarView';
 
-const HomeView: React.FC = () => {
+const HomeView: React.FC = ({navigation}: any) => {
+  const onAddButtonClick = () => {
+    navigation.navigate('RegistWorry');
+  };
+
   return (
     <HomeWrapper>
-      <HomeNavigationBarView />
+      <HomeNavigationBarView onAddButtonClick={onAddButtonClick} />
       <Text>홈</Text>
     </HomeWrapper>
   );

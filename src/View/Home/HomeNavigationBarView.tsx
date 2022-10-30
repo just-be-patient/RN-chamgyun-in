@@ -2,11 +2,15 @@ import React from 'react';
 import {View, Image, Text, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 
-const NavigationBarView: React.FC = () => {
+interface NavigationBarViewProps {
+  onAddButtonClick: () => void;
+}
+
+const HomeNavigationBarView = ({onAddButtonClick}: NavigationBarViewProps) => {
   return (
     <NavigationBarWrapper>
       <Text>로고</Text>
-      <TouchableOpacity onPress={() => console.log('hello')}>
+      <TouchableOpacity onPress={onAddButtonClick}>
         <AddButton source={require('../../../assets/h_nb_add.png')} />
       </TouchableOpacity>
     </NavigationBarWrapper>
@@ -32,4 +36,4 @@ const AddButton = styled(Image)`
   height: 35px;
 `;
 
-export default NavigationBarView;
+export default HomeNavigationBarView;
