@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Button, Text, View} from 'react-native';
 import styled from 'styled-components';
 
 import HomeNavigationBarView from './HomeNavigationBarView';
@@ -9,10 +9,15 @@ const HomeView: React.FC = ({navigation}: any) => {
     navigation.navigate('RegistWorry');
   };
 
+  const onInterestListButtonClick = () => {
+    navigation.navigate('InterestList');
+  };
+
   return (
     <HomeWrapper>
       <HomeNavigationBarView onAddButtonClick={onAddButtonClick} />
       <Text>홈</Text>
+      <Button title="관심사" onPress={onInterestListButtonClick} />
     </HomeWrapper>
   );
 };
