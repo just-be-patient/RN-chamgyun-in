@@ -13,11 +13,16 @@ const HomeView: React.FC = ({navigation}: any) => {
     navigation.navigate('InterestList');
   };
 
+  const onDetailWorryClick = () => {
+    navigation.navigate('WorryDetail');
+  };
+
   return (
     <HomeWrapper>
       <HomeNavigationBarView onAddButtonClick={onAddButtonClick} />
       <Text>홈</Text>
       <Button title="관심사" onPress={onInterestListButtonClick} />
+      <Button title="디테일" onPress={onDetailWorryClick} />
     </HomeWrapper>
   );
 };
