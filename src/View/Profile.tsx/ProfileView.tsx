@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const ProfileView: React.FC = ({navigation}: any) => {
   const onNextButtonClick = () => {
-    navigation.replace('TabBar');
+    navigation.replace('TabBar', {screen: 'Home'});
   };
 
   return (

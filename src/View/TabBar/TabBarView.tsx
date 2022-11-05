@@ -1,24 +1,43 @@
 import React from 'react';
-import {View} from 'react-native';
+import {Button, View} from 'react-native';
 import styled from 'styled-components';
 import {createStackNavigator} from '@react-navigation/stack';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 
 import HomeView from '../Home/HomeView';
+import MyPageView from '../MyPage/MyPageView';
 
-const Stack = createStackNavigator();
+type TabBarStackParamList = {
+  TabBar: {screen: string};
+};
+
+const TabBar = createStackNavigator();
 
 const TabBarView: React.FC = () => {
+  const navigation = useNavigation<StackNavigationProp<TabBarStackParamList>>();
+
+  const onHomeButtonClick = () => {
+    navigation.navigate('TabBar', {screen: 'Home'});
+  };
+
+  const onMyPageButtonClick = () => {
+    navigation.navigate('TabBar', {screen: 'MyPage'});
+  };
+
   return (
     <TabBarWrapper>
       <NavigationWrapper>
-        <Stack.Navigator
-          initialRouteName="Home"
+        <TabBar.Navigator
           screenOptions={{
             headerShown: false,
           }}>
-          <Stack.Screen name="Home" component={HomeView} />
-        </Stack.Navigator>
+          <TabBar.Screen name="Home" component={HomeView} />
+          <TabBar.Screen name="MyPage" component={MyPageView} />
+        </TabBar.Navigator>
       </NavigationWrapper>
+      <Button title="홈" onPress={onHomeButtonClick} />
+      <Button title="마이페이지" onPress={onMyPageButtonClick} />
     </TabBarWrapper>
   );
 };
