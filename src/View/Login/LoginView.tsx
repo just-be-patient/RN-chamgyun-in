@@ -10,7 +10,7 @@ const LoginView: React.FC = ({navigation}: any) => {
   });
 
   const onButtonClick = () => {
-    navigation.replace('TabBar');
+    navigation.replace('Profile');
   };
 
   const onLoginButtonClick = async () => {
