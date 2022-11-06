@@ -4,13 +4,9 @@ import styled from 'styled-components';
 import InterestListNavigationBar from './InterestListNavigationBar';
 
 const InterestListView: React.FC = ({navigation}: any) => {
-  const onPreButtonClick = () => {
-    navigation.goBack();
-  };
-
   return (
     <InterestListWrapper>
-      <InterestListNavigationBar onPreButtonClick={onPreButtonClick} />
+      <InterestListNavigationBar />
       <Text>관심사 목록</Text>
     </InterestListWrapper>
   );

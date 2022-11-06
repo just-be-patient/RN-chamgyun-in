@@ -1,17 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import {NavigationBar, PreButtonIcon} from '../shared/NavigationBar';
+import {NavigationBar} from '../shared/NavigationBar';
+import {PreButtonIcon} from '../shared/PreButtonIcon';
 
-interface InterestListNavigationBarProps {
-  onPreButtonClick: () => void;
-}
-
-const InterestListNavigationBar = ({
-  onPreButtonClick,
-}: InterestListNavigationBarProps) => {
+const InterestListNavigationBar = () => {
   return (
     <InterestListNavigationBarWrapper>
-      <PreButtonIcon onPreButtonClick={onPreButtonClick} />
+      <PreButtonIcon />
     </InterestListNavigationBarWrapper>
   );
 };

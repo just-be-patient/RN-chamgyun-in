@@ -1,17 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import {NavigationBar, PreButtonIcon} from '../shared/NavigationBar';
+import {NavigationBar} from '../shared/NavigationBar';
+import {PreButtonIcon} from '../shared/PreButtonIcon';
 
-interface WorryDetailNavigationBarProps {
-  onPreButtonClick: () => void;
-}
-
-const WorryDetailNavigationBar = ({
-  onPreButtonClick,
-}: WorryDetailNavigationBarProps) => {
+const WorryDetailNavigationBar = () => {
   return (
     <WorryDetailNavigationBarWrapper>
-      <PreButtonIcon onPreButtonClick={onPreButtonClick} />
+      <PreButtonIcon />
     </WorryDetailNavigationBarWrapper>
   );
 };
