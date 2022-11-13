@@ -2,6 +2,7 @@ import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
 import styled from 'styled-components';
+import Wrapper from '../shared/Wrapper';
 
 const ProfileView: React.FC = ({navigation}: any) => {
   const onNextButtonClick = () => {
@@ -24,15 +25,12 @@ const ProfileView: React.FC = ({navigation}: any) => {
   );
 };
 
-const ProfileWrapper = styled(View)`
-  width: 100%;
-  height: 100%;
+const ProfileWrapper = styled(Wrapper)`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   padding: 121px 16px 242px;
-  background-color: white;
 `;
 
 const DefaultProfileImage = styled(Image)`

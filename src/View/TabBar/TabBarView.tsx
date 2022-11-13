@@ -8,6 +8,7 @@ import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 import HomeView from '../Home/HomeView';
 import MyPageView from '../MyPage/MyPageView';
+import Wrapper from '../shared/Wrapper';
 
 const ACTIVE_HOME = '../../../assets/tb_home_active.png';
 const HOME = '../../../assets/tb_home.png';
@@ -66,13 +67,9 @@ const TabBarView: React.FC = () => {
   );
 };
 
-const TabBarWrapper = styled(View)`
-  width: 100%;
-  height: 100%;
+const TabBarWrapper = styled(Wrapper)`
   display: flex;
   flex-direction: column;
-
-  background-color: white;
 `;
 
 const NavigationWrapper = styled(View)`

@@ -3,6 +3,7 @@ import {Button, Text, View} from 'react-native';
 import styled from 'styled-components';
 
 import {apiPost, apiGet} from '../../Api/api';
+import Wrapper from '../shared/Wrapper';
 
 const LoginView: React.FC = ({navigation}: any) => {
   useEffect(() => {
@@ -34,10 +35,7 @@ const LoginView: React.FC = ({navigation}: any) => {
   );
 };
 
-const LoginWrapper = styled(View)`
-  width: 100%;
-  height: 100%;
-
+const LoginWrapper = styled(Wrapper)`
   background-color: ${props => props.theme.primary};
 `;
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import styled from 'styled-components';
+import Wrapper from '../shared/Wrapper';
 
 const RegistWorryView: React.FC = () => {
   return (
@@ -10,9 +11,6 @@ const RegistWorryView: React.FC = () => {
   );
 };
 
-const RegistWorryWrapper = styled(View)`
-  width: 100%;
-  height: 100%;
-`;
+const RegistWorryWrapper = styled(Wrapper)``;
 
 export default RegistWorryView;

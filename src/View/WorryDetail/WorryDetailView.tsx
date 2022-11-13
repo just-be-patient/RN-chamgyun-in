@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import styled from 'styled-components';
+import Wrapper from '../shared/Wrapper';
 import WorryDetailNavigationBar from './WorryDetailNavigationBar';
 
 const WorryDetailView: React.FC = ({navigation}: any) => {
@@ -12,9 +13,6 @@ const WorryDetailView: React.FC = ({navigation}: any) => {
   );
 };
 
-const WorryDetailWrapper = styled(View)`
-  width: 100%;
-  height: 100%;
-`;
+const WorryDetailWrapper = styled(Wrapper)``;
 
 export default WorryDetailView;

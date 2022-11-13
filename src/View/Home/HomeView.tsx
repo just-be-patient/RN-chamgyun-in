@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Text, View} from 'react-native';
 import styled from 'styled-components';
+import Wrapper from '../shared/Wrapper';
 
 import HomeNavigationBarView from './HomeNavigationBarView';
 
@@ -27,9 +28,6 @@ const HomeView: React.FC = ({navigation}: any) => {
   );
 };
 
-const HomeWrapper = styled(View)`
-  width: 100%;
-  height: 100%;
-`;
+const HomeWrapper = styled(Wrapper)``;
 
 export default HomeView;

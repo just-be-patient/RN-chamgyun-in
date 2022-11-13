@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import styled from 'styled-components';
+import Wrapper from '../shared/Wrapper';
 
 const MyPageView: React.FC = () => {
   return (
@@ -10,9 +11,6 @@ const MyPageView: React.FC = () => {
   );
 };
 
-const MyPageWrapper = styled(View)`
-  width: 100%;
-  height: 100%;
-`;
+const MyPageWrapper = styled(Wrapper)``;
 
 export default MyPageView;

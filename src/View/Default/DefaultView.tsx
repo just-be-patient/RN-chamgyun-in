@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {Image, View} from 'react-native';
 import styled from 'styled-components';
+import Wrapper from '../shared/Wrapper';
 
 const DefaultView: React.FC = ({navigation}: any) => {
   const replace = () => {
@@ -20,10 +21,7 @@ const DefaultView: React.FC = ({navigation}: any) => {
   );
 };
 
-const DefaultWrapper = styled(View)`
-  width: 100%;
-  height: 100%;
-
+const DefaultWrapper = styled(Wrapper)`
   display: flex;
   align-items: center;
   justify-content: center;

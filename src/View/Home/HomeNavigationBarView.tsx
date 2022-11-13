@@ -1,6 +1,8 @@
 import React from 'react';
-import {View, Image, Text, TouchableOpacity} from 'react-native';
+import {Image, Text, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
+import {NavigationBar} from '../shared/NavigationBar';
+import Wrapper from '../shared/Wrapper';
 
 interface NavigationBarViewProps {
   onAddButtonClick: () => void;
@@ -17,19 +19,7 @@ const HomeNavigationBarView = ({onAddButtonClick}: NavigationBarViewProps) => {
   );
 };
 
-const NavigationBarWrapper = styled(View)`
-  width: 100%;
-  height: 60px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 16px;
-  padding-right: 16px;
-
-  border-bottom-width: 0.2px;
-  border-style: solid;
-`;
+const NavigationBarWrapper = styled(NavigationBar)``;
 
 const AddButton = styled(Image)`
   width: 35px;
