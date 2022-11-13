@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Image, View} from 'react-native';
+import {Image} from 'react-native';
 import styled from 'styled-components';
 import Wrapper from '../shared/Wrapper';
 

@@ -2,7 +2,6 @@ import React from 'react';
 import {Image, Text, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 import {NavigationBar} from '../shared/NavigationBar';
-import Wrapper from '../shared/Wrapper';
 
 interface NavigationBarViewProps {
   onAddButtonClick: () => void;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Wrapper from '../shared/Wrapper';
 import InterestListNavigationBar from './InterestListNavigationBar';
 
-const InterestListView: React.FC = ({navigation}: any) => {
+const InterestListView: React.FC = () => {
   return (
     <InterestListWrapper>
       <InterestListNavigationBar />

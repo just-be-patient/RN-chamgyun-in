@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Button, Text, View} from 'react-native';
+import {Button, Text} from 'react-native';
 import styled from 'styled-components';
 
 import {apiPost, apiGet} from '../../Api/api';

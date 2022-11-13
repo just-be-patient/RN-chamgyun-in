@@ -1,10 +1,10 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text} from 'react-native';
 import styled from 'styled-components';
 import Wrapper from '../shared/Wrapper';
 import WorryDetailNavigationBar from './WorryDetailNavigationBar';
 
-const WorryDetailView: React.FC = ({navigation}: any) => {
+const WorryDetailView: React.FC = () => {
   return (
     <WorryDetailWrapper>
       <WorryDetailNavigationBar />
