@@ -1,12 +1,26 @@
 import React from 'react';
-import {Text} from 'react-native';
 import styled from 'styled-components';
 import Wrapper from '../shared/Wrapper';
+import MyPageNavigationBarView from './MyPageNavigationBarView';
+import MyPageProfileView from './MyPageProfileView';
+import MyPageWorryListView from './MyPageWorryListView';
+import useMyPage from './hook/useMyPage';
+import {Text} from 'react-native';
 
 const MyPageView: React.FC = () => {
+  const {profile} = useMyPage();
+
   return (
     <MyPageWrapper>
-      <Text>마이페이지</Text>
+      <MyPageNavigationBarView />
+      {profile ? (
+        <>
+          <MyPageProfileView profile={profile} />
+          <MyPageWorryListView />
+        </>
+      ) : (
+        <Text>loading...</Text>
+      )}
     </MyPageWrapper>
   );
 };
