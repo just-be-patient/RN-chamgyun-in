@@ -8,7 +8,7 @@ import useMyPage from './hook/useMyPage';
 import {Text} from 'react-native';
 
 const MyPageView: React.FC = () => {
-  const {profile} = useMyPage();
+  const {profile, tabMenu, onClickTabMenu} = useMyPage();
 
   return (
     <MyPageWrapper>
@@ -16,7 +16,10 @@ const MyPageView: React.FC = () => {
       {profile ? (
         <>
           <MyPageProfileView profile={profile} />
-          <MyPageWorryListView />
+          <MyPageWorryListView
+            tabMenu={tabMenu}
+            onClickTabMenu={onClickTabMenu}
+          />
         </>
       ) : (
         <Text>loading...</Text>

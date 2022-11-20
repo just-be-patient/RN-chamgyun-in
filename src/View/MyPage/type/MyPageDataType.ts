@@ -5,3 +5,8 @@ export interface Profile {
   stickWorry: number;
   adoptionRate: number;
 }
+
+export interface MyPageTab {
+  title: string;
+  isClicked: boolean;
+}
