@@ -23,7 +23,12 @@ const MyPageProfileView = ({profile}: MypageProfileViewProps) => {
 
   return (
     <MyPageProfileWrapper>
-      <ProfileImg source={{uri: profile.profileImg}} />
+      {profile.profileImg ? (
+        <ProfileImg source={{uri: profile.profileImg}} />
+      ) : (
+        <ProfileImg source={require('../../../assets/default_profile.png')} />
+      )}
+
       <UserName>{profile.userName}</UserName>
       <MyActivityWrapper>
         {myActivity.map((activity, i) => (
