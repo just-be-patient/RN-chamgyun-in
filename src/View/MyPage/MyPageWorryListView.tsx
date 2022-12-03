@@ -17,12 +17,13 @@ const MyPageWorryListView = ({
     <MyPageWorryListWrapper>
       <TabWrapper>
         {tabMenu.map((menu, i) => (
-          <TabContainer key={menu.title} isClicked={menu.isClicked}>
+          <TabContainer key={menu.title}>
             <TouchableWithoutFeedback onPress={() => onClickTabMenu(i)}>
               <TabText>{menu.title}</TabText>
             </TouchableWithoutFeedback>
           </TabContainer>
         ))}
+        <BottomBorder isMyWorry={tabMenu[0].isClicked} />
       </TabWrapper>
     </MyPageWorryListWrapper>
   );
@@ -31,21 +32,32 @@ const MyPageWorryListView = ({
 const MyPageWorryListWrapper = styled(View)``;
 
 const TabWrapper = styled(View)`
+  position: relative;
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
 `;
 
-interface TabContainerProps {
-  isClicked: boolean;
-}
-
-const TabContainer = styled(View)<TabContainerProps>`
+const TabContainer = styled(View)`
   flex: 1;
 
-  border-bottom-width: ${({isClicked}) => (isClicked ? '1px' : '0.2px')};
   border-style: solid;
+`;
+
+interface BottomBorderProps {
+  isMyWorry: boolean;
+}
+
+const BottomBorder = styled(View)<BottomBorderProps>`
+  position: absolute;
+  bottom: 0;
+  left: ${({isMyWorry}) => (isMyWorry ? 0 : 50)}%;
+  width: 50%;
+  border-bottom-width: 0.2px;
+  border-style: solid;
+
+  transition: all ease-in-out 1s;
 `;
 
 const TabText = styled(Text)`
