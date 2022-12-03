@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import {Button, Image, Text as _Text} from 'react-native';
+import {Alert, Button, Image, Text as _Text} from 'react-native';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import styled from 'styled-components';
 
-import {apiPost, apiGet} from '../../Api/api';
+import Auth from '../../Api/Auth';
 import Wrapper from '../shared/Wrapper';
 
 const LoginView: React.FC = ({navigation}: any) => {
@@ -16,15 +16,16 @@ const LoginView: React.FC = ({navigation}: any) => {
   };
 
   const onLoginButtonClick = async () => {
-    const a = await apiPost('/auth/login/local', {
+    const res = await Auth.localLogin({
       email: 'asd@123.com',
-      password: 'adnwknd',
+      password: '123123',
     });
 
-    const b = await apiGet('/auth/login/stauts');
-
-    console.log('a: ', a);
-    console.log('b: ', b);
+    if (res === 'SUCCESS') {
+      navigation.replace('Profile');
+    } else {
+      Alert.alert('로그인 실패!');
+    }
   };
 
   return (
@@ -33,7 +34,7 @@ const LoginView: React.FC = ({navigation}: any) => {
       <Text>
         이 세상 <HiighlightText>참견쟁이</HiighlightText>들 모두 여기로 모여라!
       </Text>
-      <KakaoLoginContaienr onPress={() => console.log('asd')}>
+      <KakaoLoginContaienr onPress={onLoginButtonClick}>
         <Image
           source={require('../../../assets/kakao_login_medium_wide.png')}
         />
