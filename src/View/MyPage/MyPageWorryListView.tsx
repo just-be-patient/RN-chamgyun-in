@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import styled from 'styled-components';
+import {WorryContent} from '../shared/WorryContent';
 import {MyPageTab} from './type/MyPageDataType';
 
 interface MyPageWorryListViewProps {
@@ -25,6 +26,7 @@ const MyPageWorryListView = ({
         ))}
         <BottomBorder isMyWorry={tabMenu[0].isClicked} />
       </TabWrapper>
+      <WorryContent />
     </MyPageWorryListWrapper>
   );
 };
@@ -37,6 +39,9 @@ const TabWrapper = styled(View)`
   height: auto;
   display: flex;
   flex-direction: row;
+
+  border-bottom-width: 0.2px;
+  border-style: solid;
 `;
 
 const TabContainer = styled(View)`
@@ -54,7 +59,7 @@ const BottomBorder = styled(View)<BottomBorderProps>`
   bottom: 0;
   left: ${({isMyWorry}) => (isMyWorry ? 0 : 50)}%;
   width: 50%;
-  border-bottom-width: 0.2px;
+  border-bottom-width: 1px;
   border-style: solid;
 
   transition: all ease-in-out 1s;
