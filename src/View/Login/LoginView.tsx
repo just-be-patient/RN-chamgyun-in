@@ -11,10 +11,6 @@ const LoginView: React.FC = ({navigation}: any) => {
     console.log('loading');
   });
 
-  const onButtonClick = () => {
-    navigation.replace('Profile');
-  };
-
   const onLoginButtonClick = async () => {
     const res = await Auth.localLogin({
       email: 'asd@123.com',
@@ -39,7 +35,6 @@ const LoginView: React.FC = ({navigation}: any) => {
           source={require('../../../assets/kakao_login_medium_wide.png')}
         />
       </KakaoLoginContaienr>
-      <Button title={'aasdsd'} onPress={onButtonClick} />
     </LoginWrapper>
   );
 };
