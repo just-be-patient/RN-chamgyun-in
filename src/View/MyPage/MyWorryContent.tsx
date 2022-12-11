@@ -9,7 +9,7 @@ import {
   ThumbnailImage,
   Time,
   WorryTitle,
-} from '../../shared/WorryContent';
+} from '../shared/WorryContent';
 
 interface MyWorryContentProps {
   title: string;

@@ -2,8 +2,8 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import styled from 'styled-components';
-import {WorryContent} from '../shared/WorryContent';
 import MyWorryList from './MyWorryList';
+import PraticipateWorryList from './ParticipateWorryList';
 import {MyPageTab} from './type/MyPageDataType';
 
 interface MyPageWorryListViewProps {
@@ -27,7 +27,9 @@ const MyPageWorryListView = ({
         ))}
         <BottomBorder isMyWorry={tabMenu[0].isClicked} />
       </TabWrapper>
-      <View>{tabMenu[0].isClicked ? <MyWorryList /> : <MyWorryList />}</View>
+      <View>
+        {tabMenu[0].isClicked ? <MyWorryList /> : <PraticipateWorryList />}
+      </View>
     </MyPageWorryListWrapper>
   );
 };
