@@ -27,7 +27,7 @@ const MyPageWorryListView = ({
         ))}
         <BottomBorder isMyWorry={tabMenu[0].isClicked} />
       </TabWrapper>
-      {tabMenu[0].isClicked ? <MyWorryList /> : <MyWorryList />}
+      <View>{tabMenu[0].isClicked ? <MyWorryList /> : <MyWorryList />}</View>
     </MyPageWorryListWrapper>
   );
 };

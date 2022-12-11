@@ -54,31 +54,24 @@ const mockDate = [
 
 const MyWorryList = () => {
   return (
-    <Asd>
-      <MyWorryListWrapper>
-        {mockDate.map((data, i) => {
-          return (
-            <MyWorryContent
-              key={i + data.title + data.viewCount}
-              title={data.title}
-              time={data.time}
-              viewCount={data.viewCount}
-              voteCount={data.voteCount}
-              commentCount={data.commentCount}
-              isInProgress={data.isInProgress}
-              thumbNail={data.thumbNail}
-            />
-          );
-        })}
-      </MyWorryListWrapper>
-    </Asd>
+    <MyWorryListWrapper>
+      {mockDate.map((data, i) => {
+        return (
+          <MyWorryContent
+            key={i + data.title + data.viewCount}
+            title={data.title}
+            time={data.time}
+            viewCount={data.viewCount}
+            voteCount={data.voteCount}
+            commentCount={data.commentCount}
+            isInProgress={data.isInProgress}
+            thumbNail={data.thumbNail}
+          />
+        );
+      })}
+    </MyWorryListWrapper>
   );
 };
-
-const Asd = styled(View)`
-  width: 100%;
-  align-self: stretch;
-`;
 
 const MyWorryListWrapper = styled(ScrollView)`
   display: flex;
