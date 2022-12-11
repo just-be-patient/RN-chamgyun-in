@@ -44,7 +44,7 @@ const WorryContent = () => {
             <Time>{mock1.time}</Time>
           </ProfileNickNameTimeWrapper>
         </ProfileWrapper>
-        <Title>{mock1.title}</Title>
+        <WorryTitle>{mock1.title}</WorryTitle>
         <Subtitle numberOfLines={2}>{mock1.subtitle}</Subtitle>
         <StatisticsWrapper>
           <StatisticsText>
@@ -125,12 +125,12 @@ const BadgeWrapper = styled(View)`
   margin-bottom: 20px;
 `;
 
-const ProfileImage = styled(Image)`
+export const ProfileImage = styled(Image)`
   width: 30px;
   height: 30px;
 `;
 
-const ProfileNickName = styled(Text)`
+export const ProfileNickName = styled(Text)`
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -138,7 +138,7 @@ const ProfileNickName = styled(Text)`
   color: ${({theme}) => theme.black01};
 `;
 
-const Time = styled(Text)`
+export const Time = styled(Text)`
   margin-top: 1px;
 
   font-style: normal;
@@ -149,7 +149,7 @@ const Time = styled(Text)`
   color: ${({theme}) => theme.gray01};
 `;
 
-const Title = styled(Text)`
+export const WorryTitle = styled(Text)`
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -157,7 +157,7 @@ const Title = styled(Text)`
   color: ${({theme}) => theme.black02};
 `;
 
-const Subtitle = styled(Text)`
+export const Subtitle = styled(Text)`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -165,7 +165,7 @@ const Subtitle = styled(Text)`
   color: ${({theme}) => theme.gray02};
 `;
 
-const StatisticsText = styled(Text)`
+export const StatisticsText = styled(Text)`
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -173,29 +173,29 @@ const StatisticsText = styled(Text)`
   color: ${({theme}) => theme.gray03};
 `;
 
-const Badge = styled(View)`
+export const Badge = styled(View)`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 38px;
   height: 18px;
 
-  border-radius: 100;
+  border-radius: 100px;
   overflow: hidden;
 `;
 
-const BadgeText = styled(Text)`
+export const BadgeText = styled(Text)`
   font-weight: 700;
   font-size: 8px;
   line-height: 10px;
   color: ${({theme}) => theme.white};
 `;
 
-const ThumbnailImage = styled(Image)`
+export const ThumbnailImage = styled(Image)`
   width: 70px;
   height: 70px;
 
-  border-radius: 8;
+  border-radius: 8px;
   overflow: hidden;
 `;
 
