@@ -9,6 +9,7 @@ const light: DefaultTheme = {
   gray01: '#808080',
   gray02: '#666666',
   gray03: '#9a9a9a',
+  red01: ' #E34343',
 };
 
 const dark: DefaultTheme = {
