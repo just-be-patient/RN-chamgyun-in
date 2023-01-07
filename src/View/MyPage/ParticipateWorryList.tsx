@@ -13,8 +13,6 @@ const mockData = [
     isParticipate: true,
     title:
       '랄프 맨날 RN 만해서 너무 슬퍼.. 랄프 맨날 RN 만해서 너무 슬퍼.. 랄프 맨날 RN 만해서 너무 슬퍼..',
-    subtitle:
-      '내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다... 내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다...',
     thumbNail: 'http://img.theqoo.net/img/OiWJB.jpg',
     viewCount: 1123,
     voteCount: 123,
@@ -28,8 +26,6 @@ const mockData = [
     isInProgress: true,
     isParticipate: true,
     title: '랄프 맨날 RN 만해서 너무 슬퍼..',
-    subtitle:
-      '내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다... 내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다...',
     thumbNail: 'http://img.theqoo.net/img/OiWJB.jpg',
     viewCount: 1123,
     voteCount: 123,
@@ -43,8 +39,6 @@ const mockData = [
     isInProgress: true,
     isParticipate: true,
     title: '랄프 맨날 RN 만해서 너무 슬퍼..',
-    subtitle:
-      '내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다... 내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다...',
     thumbNail: 'http://img.theqoo.net/img/OiWJB.jpg',
     viewCount: 1123,
     voteCount: 123,
@@ -58,8 +52,6 @@ const mockData = [
     isInProgress: true,
     isParticipate: true,
     title: '랄프 맨날 RN 만해서 너무 슬퍼..',
-    subtitle:
-      '내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다... 내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다...',
     thumbNail: 'http://img.theqoo.net/img/OiWJB.jpg',
     viewCount: 1123,
     voteCount: 123,
@@ -73,8 +65,6 @@ const mockData = [
     isInProgress: true,
     isParticipate: true,
     title: '랄프 맨날 RN 만해서 너무 슬퍼..',
-    subtitle:
-      '내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다... 내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다...',
     thumbNail: 'http://img.theqoo.net/img/OiWJB.jpg',
     viewCount: 1123,
     voteCount: 123,

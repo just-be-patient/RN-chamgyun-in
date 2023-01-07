@@ -20,7 +20,6 @@ interface ParticipateWorryContentProps {
   isInProgress: boolean;
   isParticipate: boolean;
   title: string;
-  subtitle: string;
   thumbNail: string;
   viewCount: number;
   voteCount: number;
