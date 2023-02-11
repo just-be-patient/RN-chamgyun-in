@@ -11,10 +11,15 @@ export default function useMyPageNavigation() {
     setMenuVisible(!menuVisible);
   };
 
+  const onModifyOptionClick = () => {
+    setMenuVisible(!menuVisible);
+    navigation.navigate('ModifyProfile' as never);
+  };
+
   const moreMenuOption: MoreMenuOption[] = [
     {
       text: '수정하기',
-      callback: () => console.log('수정하기'),
+      callback: onModifyOptionClick,
       isWarning: false,
     },
     {

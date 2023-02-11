@@ -19,7 +19,7 @@ const MoreMenu = ({top, right, options}: MoreMenuProps) => {
     <MoreMenuWrapper top={top} right={right}>
       {options.map(option => {
         return (
-          <TouchableWithoutFeedback onPress={option.callback}>
+          <TouchableWithoutFeedback onPress={option.callback} key={option.text}>
             <MoreMenuItem>
               <MoreMenuText isWarning={option.isWarning}>
                 {option.text}
