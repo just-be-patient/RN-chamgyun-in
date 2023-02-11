@@ -9,6 +9,7 @@ import RegistWorryView from './View/RegistWorry/RegistWorryView';
 import InterestListView from './View/InterestList/InterestListView';
 import WorryDetailView from './View/WorryDetail/WorryDetailView';
 import TabBarView from './View/TabBar/TabBarView';
+import ModifyProfileView from './View/ModifyProfile/ModifyProfileView';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,7 @@ const Navigation: React.FC = () => {
         <Stack.Screen name="RegistWorry" component={RegistWorryView} />
         <Stack.Screen name="InterestList" component={InterestListView} />
         <Stack.Screen name="WorryDetail" component={WorryDetailView} />
+        <Stack.Screen name="ModifyProfile" component={ModifyProfileView} />
       </Stack.Navigator>
     </NavigationContainer>
   );
