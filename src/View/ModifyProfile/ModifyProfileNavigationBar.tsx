@@ -11,6 +11,8 @@ const ModifyProfileNavigationBar = () => {
   );
 };
 
-const ModifyProfileNavigationBarrWrapper = styled(NavigationBar)``;
+const ModifyProfileNavigationBarrWrapper = styled(NavigationBar)`
+  margin-bottom: 61px;
+`;
 
 export default ModifyProfileNavigationBar;

@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import UserDC from '../../../DC/UserDC';
 import {MyPageTab, Profile} from '../type/MyPageDataType';
 
 export default function useMyPage() {
@@ -13,6 +14,8 @@ export default function useMyPage() {
       .then(d => d.json())
       .catch(e => console.error(e));
     setProfile(res);
+
+    UserDC.instance.fetchUserInfo();
   };
 
   useEffect(() => {
