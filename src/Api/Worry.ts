@@ -34,9 +34,6 @@ export default class Worry extends Api {
       params,
     );
 
-    console.log('uk worry params', params);
-    console.log('uk worry data', content);
-
     return content;
   }
 }
