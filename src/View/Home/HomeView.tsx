@@ -43,7 +43,7 @@ const HomeView: React.FC = ({navigation}: any) => {
 
   useEffect(() => {
     (async function () {
-      const data = await Worry.getWorryList({interestId: id ?? 0});
+      const data = await Worry.getWorryList(id ? {interestId: id} : undefined);
       setWorryList(data);
     })();
   }, [id]);

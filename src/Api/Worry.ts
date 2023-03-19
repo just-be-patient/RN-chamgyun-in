@@ -26,7 +26,7 @@ export interface WorryResponse {
 }
 
 export default class Worry extends Api {
-  public static async getWorryList(params: {
+  public static async getWorryList(params?: {
     interestId: number;
   }): Promise<WorryResponse[]> {
     const {content} = await this.apiGet<{content: WorryResponse[]}>(
