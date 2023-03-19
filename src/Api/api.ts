@@ -6,7 +6,7 @@ export default class Api {
     Accept: '*/*',
   };
 
-  protected static async apiGet(url: string, params?: any) {
+  protected static async apiGet<T>(url: string, params?: any): Promise<T> {
     const requestUrl = params
       ? this.baseURL + url + '?' + new URLSearchParams(params)
       : this.baseURL + url;

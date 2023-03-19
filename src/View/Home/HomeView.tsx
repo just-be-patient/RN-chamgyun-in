@@ -1,14 +1,17 @@
 import {RouteProp, useRoute} from '@react-navigation/native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Button,
   Image,
+  ScrollView,
   Text,
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
 import styled from 'styled-components';
+import Worry, {WorryResponse} from '../../Api/Worry';
 import {InterestData} from '../InterestList/InterestListView';
+import {WorryListItem} from '../shared/WorryListItem';
 import Wrapper from '../shared/Wrapper';
 
 import HomeNavigationBarView from './HomeNavigationBarView';
@@ -20,10 +23,11 @@ type HomeViewParam = {
 };
 
 const HomeView: React.FC = ({navigation}: any) => {
+  const [worryList, setWorryList] = useState<WorryResponse[]>();
+
   const route = useRoute<RouteProp<HomeViewParam, 'Param'>>();
   const id = route.params?.interestData?.id;
   const name = route.params?.interestData?.name;
-  console.log('uk', id, name);
 
   const onAddButtonClick = () => {
     navigation.navigate('RegistWorry');
@@ -36,6 +40,13 @@ const HomeView: React.FC = ({navigation}: any) => {
   const onDetailWorryClick = () => {
     navigation.navigate('WorryDetail');
   };
+
+  useEffect(() => {
+    (async function () {
+      const data = await Worry.getWorryList({interestId: id ?? 0});
+      setWorryList(data);
+    })();
+  }, [id]);
 
   return (
     <HomeWrapper>
@@ -51,7 +62,13 @@ const HomeView: React.FC = ({navigation}: any) => {
           </TouchableWithoutFeedback>
         </InterestTextWrapper>
       </InterestWrapper>
-      <Button title="디테일" onPress={onDetailWorryClick} />
+      <ScrollView>
+        {worryList &&
+          worryList.map(worry => {
+            return <WorryListItem key={worry.id} worryItem={worry} />;
+          })}
+      </ScrollView>
+      {/* <Button title="디테일" onPress={onDetailWorryClick} /> */}
     </HomeWrapper>
   );
 };
@@ -64,10 +81,15 @@ const InterestWrapper = styled(View)`
 `;
 
 const InterestTextWrapper = styled(View)`
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-right: 20px;
+  padding-right: 20px;
+  /* margin-right: 20px; */
+
+  border-bottom-width: 0.2px;
+  border-bottom-color: black;
 `;
 
 const InterestText = styled(Text)``;

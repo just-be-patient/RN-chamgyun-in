@@ -2,6 +2,7 @@
 import React from 'react';
 import {Image, Text, View} from 'react-native';
 import styled from 'styled-components';
+import {WorryResponse} from '../../Api/Worry';
 
 const mock1 = {
   userProfile: 'http://img.theqoo.net/img/OiWJB.jpg',
@@ -18,71 +19,59 @@ const mock1 = {
   commentCount: 83,
 };
 
-const mock2 = {
-  userProfile: 'http://img.theqoo.net/img/OiWJB.jpg',
-  userNickName: '네이티브가하고싶은ralph',
-  time: '1분전',
-  isInProgress: false,
-  isParticipate: false,
-  title: '랄프 맨날 RN 만해서 너무 슬퍼..',
-  subtitle:
-    '내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다... 내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다...',
-  thumbNail: 'http://img.theqoo.net/img/OiWJB.jpg',
-  viewCount: 1123,
-  voteCount: 123,
-  commentCount: 83,
-};
+interface WorryListItemProps {
+  worryItem: WorryResponse;
+}
 
-/**
- *
- * @deprecated
- */
-
-const WorryContent = () => {
+const WorryListItem = ({worryItem}: WorryListItemProps) => {
   return (
-    <WorryContentWrapper>
+    <WorryListItemWrapper>
       <LeftContentsWrapper>
         <ProfileWrapper>
-          <ProfileImage source={{uri: mock1.userProfile}} borderRadius={100} />
+          <ProfileImage
+            source={{uri: worryItem.writer.profileUrl}}
+            borderRadius={100}
+          />
           <ProfileNickNameTimeWrapper>
-            <ProfileNickName>{mock1.userNickName}</ProfileNickName>
+            <ProfileNickName>{worryItem.writer.name}</ProfileNickName>
             <Time>{mock1.time}</Time>
           </ProfileNickNameTimeWrapper>
         </ProfileWrapper>
-        <WorryTitle>{mock1.title}</WorryTitle>
-        <Subtitle numberOfLines={2}>{mock1.subtitle}</Subtitle>
+        <WorryTitle>{worryItem.title}</WorryTitle>
+        <Subtitle numberOfLines={2}>{worryItem.content}</Subtitle>
         <StatisticsWrapper>
           <StatisticsText>
-            조회수 {mock1.viewCount.toLocaleString()} | 투표수{' '}
-            {mock1.voteCount.toLocaleString()} | 댓글수{' '}
-            {mock1.commentCount.toLocaleString()}
+            조회수 {worryItem.viewCount.toLocaleString()}
           </StatisticsText>
         </StatisticsWrapper>
       </LeftContentsWrapper>
       <RightContentsWrapper>
         <BadgeWrapper>
-          {mock2.isInProgress ? (
-            <Badge style={{backgroundColor: '#2E4CE7'}}>
-              <BadgeText>고민중</BadgeText>
-            </Badge>
-          ) : (
-            <Badge style={{backgroundColor: '#5FBD52'}}>
-              <BadgeText>고민완료</BadgeText>
-            </Badge>
-          )}
-          {mock2.isParticipate && (
-            <Badge style={{backgroundColor: '#F5BE46', marginLeft: 4}}>
-              <BadgeText>참여중</BadgeText>
-            </Badge>
-          )}
+          {worryItem.badges.map((badge, i) => {
+            return badge.text === '고민중' ? (
+              <Badge key={`${badge}-${i}`} style={{backgroundColor: '#2E4CE7'}}>
+                <BadgeText>고민중</BadgeText>
+              </Badge>
+            ) : badge.text === '고민완료' ? (
+              <Badge key={`${badge}-${i}`} style={{backgroundColor: '#5FBD52'}}>
+                <BadgeText>고민완료</BadgeText>
+              </Badge>
+            ) : (
+              <Badge
+                key={`${badge}-${i}`}
+                style={{backgroundColor: '#F5BE46', marginLeft: 4}}>
+                <BadgeText>참여중</BadgeText>
+              </Badge>
+            );
+          })}
         </BadgeWrapper>
-        <ThumbnailImage source={{uri: mock1.thumbNail}} />
+        <ThumbnailImage source={{uri: worryItem.imageUrl}} />
       </RightContentsWrapper>
-    </WorryContentWrapper>
+    </WorryListItemWrapper>
   );
 };
 
-const WorryContentWrapper = styled(View)`
+const WorryListItemWrapper = styled(View)`
   display: flex;
   flex-direction: row;
   padding: 12px 20px 16px;
@@ -204,4 +193,4 @@ export const ThumbnailImage = styled(Image)`
   overflow: hidden;
 `;
 
-export {WorryContent};
+export {WorryListItem};
