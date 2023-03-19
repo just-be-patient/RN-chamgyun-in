@@ -3,27 +3,17 @@ import React from 'react';
 import {Image, Text, View} from 'react-native';
 import styled from 'styled-components';
 import {WorryResponse} from '../../Api/Worry';
-
-const mock1 = {
-  userProfile: 'http://img.theqoo.net/img/OiWJB.jpg',
-  userNickName: '네이티브가하고싶은ralph',
-  time: '1분전',
-  isInProgress: true,
-  isParticipate: true,
-  title: '랄프 맨날 RN 만해서 너무 슬퍼..',
-  subtitle:
-    '내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다... 내가 자바스크립트할라고 취직한게 아닌데 개같네 하 스위프트하고 싶다. 스위프트 하고싶다...',
-  thumbNail: 'http://img.theqoo.net/img/OiWJB.jpg',
-  viewCount: 1123,
-  voteCount: 123,
-  commentCount: 83,
-};
+import TimeUtil from '../../util/timeUtil';
 
 interface WorryListItemProps {
   worryItem: WorryResponse;
 }
 
 const WorryListItem = ({worryItem}: WorryListItemProps) => {
+  const getTime = () => {
+    return TimeUtil.getTime(new Date(worryItem.createAt));
+  };
+
   return (
     <WorryListItemWrapper>
       <LeftContentsWrapper>
@@ -34,7 +24,7 @@ const WorryListItem = ({worryItem}: WorryListItemProps) => {
           />
           <ProfileNickNameTimeWrapper>
             <ProfileNickName>{worryItem.writer.name}</ProfileNickName>
-            <Time>{mock1.time}</Time>
+            <Time>{getTime()}</Time>
           </ProfileNickNameTimeWrapper>
         </ProfileWrapper>
         <WorryTitle>{worryItem.title}</WorryTitle>
